@@ -21,7 +21,7 @@
 <body>
 
     <nav class="navbar justify-content-center fs-3 mb-3" style="background-color: #00ff5573;">
-        PHP CRUDE application with AJAX
+        PHP CRUD application with AJAX
     </nav>
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="row mb-3">
                     <label class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="Last_name" id="" placeholder="Doe">
+                    <input type="text" class="form-control" name="last_name" id="" placeholder="Doe">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Email</label>
@@ -343,10 +343,35 @@
                     <label for="female" class="form-input-label">Female</label>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary me-1" id="inputBtn">Submit</button>
+                    <button type="submit" class="btn btn-primary me-1" id="inserttBtn">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cancel</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Toast container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <!-- success Toast -->
+        <div class="toast align-items-center text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="successToast">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <strong>Success!</strong>
+                    <span id="successMsg"></span>
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <!-- Error Toast -->
+        <div class="toast align-items-center text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="errorToast">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <strong>Error!</strong>
+                    <span id="errorMsg"></span>
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
         </div>
     </div>
 
