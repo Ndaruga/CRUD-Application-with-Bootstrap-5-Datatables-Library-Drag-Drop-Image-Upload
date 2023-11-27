@@ -1,11 +1,9 @@
 <?php
-include "mysql_db_conn.php";
+include "config/mysql_db_conn.php";
 
 // insert data to database
 if($_GET["action"] === "insertData") {
-    if(!empty($_POST["first_name"]) && !empty($_POST["last_name"]) &&
-    !empty($_POST["email"]) && !empty($_POST["phone"]) && !empty($_POST["gender"]) && 
-    $_FILES["image"]["size"] != 0){
+    if (!empty($_POST["first_name"]) && !empty($_POST["last_name"]) && !empty($_POST["email"]) && !empty($_POST["phone"]) && !empty($_POST["country"]) && !empty($_POST["gender"]) && $_FILES["image"]["size"] != 0) {
         $first_name = mysqli_real_escape_string($conn, $_POST["first_name"]);
         $last_name = mysqli_real_escape_string($conn, $_POST["last_name"]);
         $email = mysqli_real_escape_string($conn, $_POST["email"]);
@@ -18,8 +16,8 @@ if($_GET["action"] === "insertData") {
         $new_name = uniqid() . time() . "." . pathinfo($original_name, PATHINFO_EXTENSION);
         move_uploaded_file($_FILES["image"]["tmp_name"], "uploads/" . $new_name);
 
-        $sql = "INSERT INTO `user`(`id`, `First Name`, `Last Name`, `email`, `phone`, `Gender`, `Image`) VALUES 
-        (NULL, '$first_name','$last_name','$email','$phone','$gender','$new_name')";
+        $sql = "INSERT INTO `user`(`id`, `First Name`, `Last Name`, `email`, `phone`, `country`, `Gender`, `Image`) VALUES 
+        (NULL, '$first_name','$last_name','$email','$phone', '$country','$gender','$new_name')";
 
         if(mysqli_query($conn, $sql)){
             echo json_encode([

@@ -343,7 +343,7 @@
                     <label for="female" class="form-input-label">Female</label>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary me-1" id="inserttBtn">Submit</button>
+                    <button type="submit" class="btn btn-primary me-1" id="insertBtn">Submit</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cancel</button>
                 </div>
             </form>

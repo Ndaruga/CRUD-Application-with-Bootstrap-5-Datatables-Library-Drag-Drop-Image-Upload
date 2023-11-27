@@ -10,17 +10,15 @@ CREATE TABLE `User` (
   `Last Name` varchar(255) default NULL,
   `email` varchar(255) default NULL,
   `phone` varchar(100) default NULL,
+  `country` varchar(100) default NULL,
   `Gender` varchar(255) default NULL,
   `Image` TEXT default NULL,
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=1;
 
-INSERT INTO `User` (`First Name`,`Last Name`,`email`,`phone`,`Gender`,`Image`)
+INSERT INTO `User` (`First Name`,`Last Name`,`email`,`phone`,`country`,`Gender`,`Image`)
 VALUES
-  ("Zenia Wiley","Mannix Berg","hendrerit.a@protonmail.com","1-431-863-8420","Bo","elit elit fermentum risus, at fringilla purus mauris a"),
-  ("Kelly Mejia","Hashim James","urna.justo.faucibus@google.ca","1-257-858-8257","Tarik","sit amet luctus vulputate, nisi sem semper erat,"),
-  ("Randall Rosario","Daria Boyer","id.enim@yahoo.com","(463) 225-7839","Matthew","at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus"),
-  ("Gabriel Molina","John Mccarthy","eros.non@outlook.couk","1-842-912-1534","Jordan","venenatis lacus. Etiam bibendum fermentum metus. Aenean");
-INSERT INTO `User` (`First Name`,`Last Name`,`email`,`phone`,`Gender`,`Image`)
-VALUES
-  ("Mollie Ferguson","Mohammad Kim","nec.metus@icloud.ca","(302) 481-5493","Zachery","in magna. Phasellus dolor elit, pellentesque");
+  ("Zenia","Mannix","hendrerit.a@protonmail.com","1-431-863-8420","Kenya","Bo","elit elit fermentum risus, at fringilla purus mauris a"),
+  ("Kelly","Hashim","urna.justo.faucibus@google.ca","1-257-858-8257","Chad","Tarik","sit amet luctus vulputate, nisi sem semper erat,"),
+  ("Randall","Daria","id.enim@yahoo.com","463225-7839","Uganda","Matthew","at, libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus"),
+  ("Gabriel","John","eros.non@outlook.couk","1-842-912-1534","Malawi","Jordan","venenatis lacus. Etiam bibendum fermentum metus. Aenean");

@@ -26,8 +26,9 @@ $(document).ready(function() {
 
     // Insert data into database
     $("#insertForm").on("submit", function(e) {
-        $("#inputBtn").attr("disabled", "disabled");
+        $("#insertBtn").attr("disabled", "disabled");
         e.preventDefault();
+        console.log("Clicked");
         $.ajax({
             url: "server.php?action=insertData",
             type: "POST",
@@ -35,13 +36,14 @@ $(document).ready(function() {
             contentType: false,
             cache: false,
             processData: false,
-            sucess: function(response) {
+            success: function(response) {
                 var response = JSON.parse(response);
+                console.log(response.statusCode);
                 if (response.statusCode == 200) {
                     $("#offcanvasAddUser").offcanvas("hide");
                     $("insertBtn").removeAttr("disabled");
                     $("insertForm")[0].reset();
-                    $(".preview_img").attr("src", "images.default_profile.jpg");
+                    $(".preview_img").attr("src", "images.default_profile.jpeg");
                     $("#successToast").toast("show");
                     $("#successMsg").html(response.message);
 
@@ -49,7 +51,7 @@ $(document).ready(function() {
                     $("#offcanvasAddUser").offcanvas("hide");
                     $("insertBtn").removeAttr("disabled");
                     $("insertForm")[0].reset();
-                    $(".preview_img").attr("src", "images.default_profile.jpg");
+                    $(".preview_img").attr("src", "images.default_profile.jpeg");
                     $("#errorToast").toast("show");
                     $("#errorMsg").html(response.message);
 
@@ -58,7 +60,6 @@ $(document).ready(function() {
                     $("#errorToast").toast("show");
                     $("#errorMsg").html(response.message);
                 }
-
             }
         })
     })
